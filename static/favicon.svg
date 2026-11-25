@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="windcheck">
+  <g fill="none" stroke="#1558e6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="32" r="25"/>
+    <path d="M7 32h50"/>
+    <path d="M32 7c8 8 12 16 12 25S40 49 32 57"/>
+    <path d="M32 7C24 15 20 23 20 32s4 17 12 25"/>
+    <path d="M14 19c5 3 11 5 18 5s13-2 18-5"/>
+    <path d="M14 45c5-3 11-5 18-5s13 2 18 5"/>
+  </g>
+</svg>

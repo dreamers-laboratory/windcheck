@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Windcheck</title>
+<meta name="description" content="Windcheck explains airport wind, crosswind, ceiling, visibility, density altitude, METAR history, TAF, LAMP, NBM, HRRR, NAM, GFS, and NWS gridpoint forecast guidance.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="{{ site_url }}/about">
+<link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Windcheck">
+<meta property="og:title" content="About Windcheck">
+<meta property="og:description" content="What Windcheck is, how it uses public aviation weather data, and why it combines history with multiple forecast models.">
+<meta property="og:url" content="{{ site_url }}/about">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="About Windcheck">
+<meta name="twitter:description" content="Airport weather history and forecast model comparison, explained plainly.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "{{ site_url }}/about#page",
+      "url": "{{ site_url }}/about",
+      "name": "About Windcheck",
+      "description": "Windcheck explains airport wind, crosswind, ceiling, visibility, density altitude, METAR history, and forecast model guidance.",
+      "isPartOf": {"@type": "WebSite", "name": "Windcheck", "url": "{{ site_url }}/"},
+      "creator": {"@type": "Organization", "name": "Dreamers", "url": "https://www.thedreamers.us/"},
+      "about": [
+        "METAR history",
+        "TAF forecast guidance",
+        "airport crosswind",
+        "aviation weather",
+        "density altitude"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "{{ site_url }}/about#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Windcheck an official aviation weather briefing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Windcheck is a planning and pattern-recognition tool. Pilots should verify current and forecast conditions with official aviation weather sources before flight."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does Windcheck combine?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It combines cached METAR-style airport history, runway-aware crosswind calculations, ceiling and visibility summaries, density altitude where local METAR temperature and altimeter data exist, and model guidance such as TAF, LAMP, NWS gridpoint, HRRR, NBM, NAM, and GFS when available."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #000000;
+    --muted: #555555;
+    --line: #000000;
+    --brand-blue: #1558e6;
+    --wash: #f5f5f5;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: ui-monospace, "JetBrains Mono", "SF Mono", "Menlo",
+                 "Cascadia Mono", "Consolas", monospace;
+    font-size: 14px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-underline-offset: 2px; }
+  .back {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    color: var(--brand-blue);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    margin: 18px 18px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .back:hover { text-decoration: underline; }
+  main {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: clamp(18px, 4vw, 52px);
+  }
+  .hero {
+    border-bottom: 1px solid var(--line);
+    padding: clamp(20px, 5vw, 58px) 0 clamp(22px, 4vw, 44px);
+  }
+  h1 {
+    font-size: clamp(34px, 8vw, 94px);
+    line-height: 0.95;
+    letter-spacing: 0;
+    margin: 0;
+    max-width: 980px;
+    text-transform: none;
+  }
+  .question-two {
+    font-size: clamp(18px, 3vw, 32px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 28px 0 0;
+    max-width: 760px;
+  }
+  .partial {
+    color: var(--muted);
+    font-size: clamp(14px, 1.5vw, 18px);
+    margin: 16px 0 0;
+    max-width: 680px;
+  }
+  section {
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    gap: clamp(16px, 3vw, 34px);
+    grid-template-columns: minmax(160px, 0.28fr) minmax(0, 1fr);
+    padding: clamp(22px, 4vw, 42px) 0;
+  }
+  h2 {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    line-height: 1.2;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  p { margin: 0 0 14px; }
+  .body > p:last-child { margin-bottom: 0; }
+  ul, ol {
+    margin: 0;
+    padding-left: 18px;
+  }
+  li + li { margin-top: 8px; }
+  .method-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    border: 1px solid var(--line);
+  }
+  .method {
+    border-bottom: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    min-width: 0;
+    padding: 14px;
+  }
+  .method b {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    margin-bottom: 7px;
+    text-transform: uppercase;
+  }
+  .method span {
+    color: var(--muted);
+    display: block;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .source-list {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  }
+  .source-list a {
+    border: 1px solid var(--line);
+    display: block;
+    min-width: 0;
+    padding: 9px 10px;
+    text-decoration: none;
+  }
+  .source-list a:hover { background: var(--wash); }
+  .source-list small {
+    color: var(--muted);
+    display: block;
+    margin-top: 3px;
+  }
+  .notice {
+    background: var(--fg);
+    color: var(--bg);
+    padding: 14px;
+  }
+  @media (max-width: 760px) {
+    section { grid-template-columns: 1fr; }
+    h1 { font-size: clamp(34px, 13vw, 58px); }
+  }
+</style>
+</head>
+<body>
+<a class="back" href="/" aria-label="Back to Windcheck">← back</a>
+<main>
+  <article>
+    <header class="hero">
+      <h1>When do i get there? How do i avoid faceplanting into dirt? What even is wind and air? Are we in a simulation?</h1>
+      <p class="question-two">Do I even care about arriving, or am i just flying to fly?</p>
+      <p class="partial">These, and other questions, are only partly answered by this website.</p>
+    </header>
+
+    <section>
+      <h2>What It Is</h2>
+      <div class="body">
+        <p>Windcheck is a small aviation weather workbench. It takes the boring parts of airport weather research — scrolling METARs, checking runways, comparing forecast sources, wondering whether a gust number is a one-off or a habit — and puts them into one view.</p>
+        <p>It is not an official briefing system and it does not know your aircraft, your currency, your stomach, your instructor, or the exact texture of the runway you are about to meet. It is built for pattern recognition: what usually happens here, what the models currently think, and where the obvious traps may be.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>How To Use It</h2>
+      <div class="body">
+        <ol>
+          <li>Enter an airport. FAA and ICAO codes both work where the airport data exists.</li>
+          <li>Pick a runway mode. Auto chooses the runway end best aligned with the wind; fixed runway mode shows crosswind for the runway you actually care about.</li>
+          <li>Choose hours and a historical window. Overview shows the repeatable shape by hour in your chosen time zone; All Historical shows the individual observations.</li>
+          <li>Set personal minimums. The app flags low visibility, low ceiling, and crosswind above your max.</li>
+          <li>Read the forecast section as model guidance, not prophecy. If the models disagree, that disagreement is itself useful.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <h2>What It Computes</h2>
+      <div class="body">
+        <div class="method-grid">
+          <div class="method"><b>METAR History</b><span>Cached observations are grouped by local hour so the app can show what tends to happen at a field instead of only what happened in the last report.</span></div>
+          <div class="method"><b>Crosswind</b><span>Wind direction and speed are projected against runway heading. Mixed mode uses the best-aligned runway end per observation; fixed mode keeps the selected runway.</span></div>
+          <div class="method"><b>Ceiling + Visibility</b><span>Ceiling uses reported broken, overcast, or vertical-visibility layers when present. Visibility is read from the observation when available.</span></div>
+          <div class="method"><b>Gust Frequency</b><span>Gust averages use reports that actually include gusts. The percent tells you how often gusts showed up in the bucket.</span></div>
+          <div class="method"><b>Density Altitude</b><span>When the airport's own METAR has temperature and altimeter data, Windcheck estimates density altitude and marks high points.</span></div>
+          <div class="method"><b>Forecast Models</b><span>TAF, LAMP, NWS gridpoint, HRRR, NBM, NAM, and GFS are compared when available so short-range aviation guidance and broader model guidance can sit together.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Why Not Just Use METAR-TAF?</h2>
+      <div class="body">
+        <p><a href="https://metar-taf.com/">METAR-TAF</a> is a good resource for fast aviation weather lookup. If you want a clean current METAR or TAF, it is often exactly the right tab.</p>
+        <p>Windcheck has a narrower itch: combine airport history, runway-aware crosswind, personal minimums, density altitude, and several forecast methods without making the pilot assemble the story from separate pages. The goal is not to replace the simple lookup; it is to answer the follow-up question: “is this airport usually like this, and do the models agree about what is next?”</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Forecast Sources</h2>
+      <div class="body">
+        <p>TAFs are airport-specific and aviation-native, but they only exist for selected airports and are human/official products with limited spatial coverage. LAMP adds short-range, station-oriented statistical guidance. HRRR gives high-resolution short-range model detail. NBM blends many models into a point forecast. NAM and GFS extend the model comparison when useful. NWS gridpoint data is easy to consume and broad, but less aviation-specific.</p>
+        <p>The app does not pretend these sources are equally good. It shows their horizons and values side by side because agreement, disagreement, and missing coverage are all signals.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Limits</h2>
+      <div class="body">
+        <p class="notice">Do not use Windcheck as your only preflight weather source. It is a planning aid, not a legal briefing, dispatch release, or instrument rating.</p>
+        <p>METAR history can have missing reports, station changes, parsing weirdness, and weather that changed between observations. Forecast models can be wrong in exactly the hour that matters. Crosswind math is clean; the atmosphere is not.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Sources Credited</h2>
+      <div class="body">
+        <div class="source-list">
+          <a href="https://aviationweather.gov/data/api/">NOAA Aviation Weather Center Data API<small>METAR and TAF API documentation.</small></a>
+          <a href="https://aviationweather.gov/">NOAA Aviation Weather Center<small>Official U.S. aviation weather products.</small></a>
+          <a href="https://mesonet.agron.iastate.edu/request/download.phtml">Iowa Environmental Mesonet ASOS archive<small>Historical ASOS/AWOS-style observation access.</small></a>
+          <a href="https://www.ogimet.com/">Ogimet<small>Historical METAR access used during development and cache fills.</small></a>
+          <a href="https://ourairports.com/data/">OurAirports data<small>Open airport and runway reference data.</small></a>
+          <a href="https://www.weather.gov/documentation/services-web-api">National Weather Service API<small>Gridpoint weather API documentation.</small></a>
+          <a href="https://vlab.noaa.gov/web/mdl/lamp">NOAA LAMP<small>Localized Aviation MOS Program guidance.</small></a>
+          <a href="https://vlab.noaa.gov/web/mdl/nbm">NOAA National Blend of Models<small>Blended forecast guidance.</small></a>
+          <a href="https://rapidrefresh.noaa.gov/hrrr/">NOAA HRRR<small>High-Resolution Rapid Refresh model information.</small></a>
+          <a href="https://nomads.ncep.noaa.gov/">NOAA NOMADS<small>Model data access, including GRIB2 products.</small></a>
+        </div>
+      </div>
+    </section>
+  </article>
+</main>
+</body>
+</html>

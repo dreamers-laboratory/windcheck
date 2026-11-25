@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Windcheck Privacy Policy</title>
+<meta name="description" content="How Dreamers Inc. handles information in the Windcheck website and mobile app.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="{{ site_url }}/privacy/">
+<link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
+<style>
+  :root { --ink: #000; --muted: #555; --blue: #1558e6; }
+  * { box-sizing: border-box; }
+  html { color: var(--ink); background: #fff; }
+  body {
+    margin: 0;
+    font-family: ui-monospace, "SF Mono", "Menlo", "Consolas", monospace;
+    font-size: 15px;
+    line-height: 1.65;
+    letter-spacing: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-underline-offset: 3px; }
+  a:hover { color: var(--blue); }
+  a:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+  .page { width: min(100%, 960px); margin: auto; padding: 24px 32px 56px; }
+  .top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { color: var(--blue); font-size: 16px; font-weight: 700; text-decoration: none; }
+  .back { font-size: 13px; padding: 10px 0; }
+  header { border-bottom: 1px solid var(--ink); padding: 28px 0 24px; }
+  h1 { font-size: 32px; line-height: 1.2; margin: 0 0 16px; }
+  .meta { color: var(--muted); font-size: 13px; margin: 0; }
+  section {
+    display: grid;
+    grid-template-columns: minmax(140px, 0.28fr) minmax(0, 1fr);
+    gap: 28px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--ink);
+  }
+  h2 { font-size: 13px; line-height: 1.5; text-transform: uppercase; margin: 2px 0 0; }
+  p { margin: 0 0 16px; }
+  .body > :last-child { margin-bottom: 0; }
+  ul { margin: 0; padding-left: 20px; }
+  li + li { margin-top: 12px; }
+  @media (max-width: 640px) {
+    .page { padding: 16px 20px 40px; }
+    header { padding-top: 20px; }
+    section { grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 24px 0; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <nav class="top" aria-label="Windcheck">
+    <a class="brand" href="/">WINDCHECK</a>
+    <a class="back" href="/">&larr; Back to app</a>
+  </nav>
+  <header>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Dreamers Inc. &middot; Version 1.1<br>Effective November 17, 2026</p>
+  </header>
+  <section aria-labelledby="scope">
+    <h2 id="scope">Scope</h2>
+    <div class="body">
+      <p>Dreamers Inc. operates the Windcheck website and mobile app. This policy covers information handled when you use Windcheck.</p>
+      <p>Windcheck has no user accounts or payments. It does not request GPS, contacts, camera or microphone access, show advertisements, or use advertising identifiers.</p>
+    </div>
+  </section>
+  <section aria-labelledby="information">
+    <h2 id="information">Information handled</h2>
+    <div class="body">
+      <ul>
+        <li><strong>Weather requests.</strong> Queries send our server the airport, time zone and relevant runway, hour, date and minimums settings. Auto time zone uses your device or browser's time-zone setting. An airport selection is a weather lookup, not a device-location reading.</li>
+        <li><strong>Connection records.</strong> Our servers receive IP addresses and connection details. Web-server and diagnostic logs record requests, including URLs with query settings, timestamps, response status and browser or app information. We use these records to operate, secure and troubleshoot Windcheck.</li>
+        <li><strong>Local storage.</strong> The website saves preferences and recent results in your browser. The mobile app saves preferences on your device; weather results remain in memory during use. Device or operating-system backups may also preserve app settings.</li>
+        <li><strong>Public data.</strong> Our server caches public weather observations and airport data by airport. These caches contain weather records, not user accounts.</li>
+      </ul>
+    </div>
+  </section>
+  <section aria-labelledby="providers">
+    <h2 id="providers">Providers and sharing</h2>
+    <div class="body">
+      <p>Windcheck runs on Amazon Web Services infrastructure. Our server requests airport and weather data from sources including NOAA, the National Weather Service, Iowa State Mesonet, Ogimet, Open-Meteo and OurAirports. These source requests use airport identifiers or coordinates, without forwarding your IP address.</p>
+      <p>The website loads <strong>Google reCAPTCHA</strong> for abuse protection. Google can receive browser, device and interaction information and use cookies or similar identifiers. When verifying a protected request, our server sends Google its verification token and your IP address. See <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. reCAPTCHA is not embedded in the native app.</p>
+      <p>Apple handles TestFlight and App Store distribution. Beta use may involve diagnostics, crash information and feedback shared with Apple and the developer under <a href="https://www.apple.com/legal/privacy/">Apple's privacy practices</a> and your settings.</p>
+      <p>The iOS app, starting with version 1.0.3, uses <strong>Shorebird</strong> to check for and deliver software fixes. Update checks send the app and release version, platform, processor architecture, update status and a random identifier for this installation. Shorebird also receives patch download, install and failure events. Its infrastructure may log IP addresses. The updater does not send your weather queries, local preferences, location, advertising identifiers or contact information. See <a href="https://shorebird.dev/privacy">Shorebird's Privacy Policy</a>.</p>
+      <p>We do not sell personal information or share it for targeted advertising. Service providers process information needed to provide their services. We may disclose records where required by law or necessary to investigate abuse and protect the service.</p>
+    </div>
+  </section>
+  <section aria-labelledby="retention">
+    <h2 id="retention">Retention and security</h2>
+    <div class="body">
+      <p>Local preferences and browser results remain until cleared, removed or replaced. Public weather caches are retained to support historical analysis.</p>
+      <p>Server access logs normally rotate daily with up to 14 archived log files. Diagnostic records and backups can be kept longer for operations, security or legal needs; there is no single fixed retention period for every record.</p>
+      <p>Connections to Windcheck use HTTPS. Access to operational systems is restricted, though no internet service can guarantee complete security.</p>
+    </div>
+  </section>
+  <section aria-labelledby="choices">
+    <h2 id="choices">Your choices</h2>
+    <div class="body">
+      <p>Choose a time zone manually instead of Auto. Clear Windcheck's site data to remove browser storage, or remove the mobile app and its data to clear local preferences. Your device or backup service may offer separate backup controls.</p>
+      <p>You can contact us about access, correction or deletion of personal information we hold. We may need enough information to identify the relevant records. Clearing local storage does not remove server logs, and security or legal obligations may require retaining some records.</p>
+    </div>
+  </section>
+  <section aria-labelledby="contact">
+    <h2 id="contact">Contact and updates</h2>
+    <div class="body">
+      <p>Send privacy questions or requests through the <a href="https://thedreamers.us/#contact">Dreamers contact form</a>, mentioning Windcheck. You choose the contact details and message you provide there.</p>
+      <p>We will update the effective date above when this policy changes.</p>
+    </div>
+  </section>
+</main>
+</body>
+</html>

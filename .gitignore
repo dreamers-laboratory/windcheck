@@ -1,0 +1,14 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+*.db-shm
+*.db-wal
+metar.db
+screenshots/
+archive/
+.pytest_cache/
+BUILD_GIT_HASH
+recaptcha
+.env
+.env.*
