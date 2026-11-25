@@ -15,6 +15,13 @@ hours measured, runway mode, and personal minimums, then compare historical
 patterns with near-term model guidance for wind, ceiling, visibility, crosswind,
 and density altitude.
 
+## License
+
+Windcheck's original source code is licensed under the
+[Apache License 2.0](LICENSE). See [NOTICE](NOTICE) for original-author
+attribution. Third-party code and data retain their own terms; see
+[Third-party notices](THIRD_PARTY_NOTICES.md) and [Data Sources](#data-sources).
+
 ## Project Files
 
 `metar.py` is the backend, database layer, data fetcher, METAR parser, stats
